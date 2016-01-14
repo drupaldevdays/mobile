@@ -1,0 +1,14 @@
+<ion-view view-title="Sessions">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="session in sessions" href="#/app/session/{{session.nid[0].value}}" class="item-text-wrap item-thumbnail-left">
+        <img  ng-src="{{session.field_image[0].url}}" alt="{{session.title[0].value}}" ng-if="session.field_image[0].url"/>
+        <img  ng-src="img/img_placeholder.jpg" alt="Image unavailable" ng-if="!session.field_image[0].url"/>
+        <div class="entity-session-track">{{session.field_session_track[0].value}}</div>
+        <h2 class="entity-title"><strong>{{session.title[0].value}}</strong></h2>
+        <div class="entity-room">{{session.field_room[0].value}}</div>
+        <div class="entity-body">{{session.body[0].value | truncate: 150 }}</div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

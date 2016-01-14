@@ -1,0 +1,1 @@
+var app_services = angular.module('drupal8-ionic.services', []);

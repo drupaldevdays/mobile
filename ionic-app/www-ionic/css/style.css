@@ -1,0 +1,29 @@
+/* Empty. Add your own CSS if you like */
+/* line 3, stdin */
+ion-view.home div#home-logo {
+  text-align: center;
+  margin-top: 60px; }
+
+/* line 9, stdin */
+ion-content .entity-type, ion-content .entity-session-track, ion-item .entity-type, ion-item .entity-session-track {
+  font-size: 0.85em;
+  color: red;
+  margin: 0 0 4px 0; }
+
+/* line 14, stdin */
+ion-content .entity-room, ion-item .entity-room {
+  font-size: 0.80em;
+  margin: 0 0 4px 0; }
+
+/* line 21, stdin */
+ion-item .entity-subtitle {
+  font-size: 0.8em;
+  color: dimgray; }
+
+/* line 25, stdin */
+ion-item .entity-body {
+  font-size: 0.8em; }
+
+/* line 30, stdin */
+.item-thumbnail-left .item-content > img:first-child {
+  height: auto !important; }

@@ -1,0 +1,10 @@
+<ion-view view-title="{{session.title[0].value}}">
+    <ion-content class="padding">
+      <div class="entity-session-track">{{session.field_session_track[0].value}}</div>
+      <h2 class="entity-title"><strong>{{session.title[0].value}}</strong></h2>
+      <div class="entity-room" ng-if="session.field_room[0].value">{{session.field_room[0].value}}</div>
+      <img  ng-src="{{session.field_image[0].url}}" alt="{{session.title[0].value}}" ng-if="session.field_image[0].url" style="height:200px;" />
+      <img  ng-src="img/img_placeholder.jpg" alt="Image unavailable" ng-if="session.title[0].value" ng-if="!session.field_image[0].url"/>
+      <article ng-bind-html="session.body[0].value"></article>
+    </ion-content>
+</ion-view>

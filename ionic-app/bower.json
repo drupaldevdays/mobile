@@ -1,0 +1,14 @@
+{
+  "name": "drupal8-ionic",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.2.4"
+  },
+  "dependencies": {
+    "ngstorage": "~0.3.10",
+    "gulp": "~3.9.0"
+  },
+  "resolutions": {
+    "angular": "1.4.3"
+  }
+}
