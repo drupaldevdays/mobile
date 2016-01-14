@@ -1,0 +1,5 @@
+# Ionic - Angular Js Application (ionic-app folder)
+ionic-app/node_modules/
+ionic-app/platforms/
+ionic-app/plugins/
+ionic-app/www/lib
