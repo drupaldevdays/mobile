@@ -1,4 +1,5 @@
 # Drupal Dev Days Milan 2016 ionic mobile test app
+A Ionic / Angular Mobile Application that interacts with the Drupal 8 Dev Days (Milan 2016) web site
 Version: 0.1
 Contributors: Italo Mairo (www.italomairo.com)
 
