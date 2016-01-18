@@ -1,7 +1,17 @@
-app_controllers.controller('SessionDetCtrl', ['$scope', '$rootScope', '$stateParams', 'DrupalSessionsService', function ($scope, $rootScope, $stateParams, DrupalSessionsService) {
+app_controllers.controller('SessionDetCtrl', ['$scope', '$rootScope', '$stateParams', 'DrupalNodesService', 'drupal_instance',  function ($scope, $rootScope, $stateParams, DrupalNodesService, drupal_instance) {
+
+  var endpoint = drupal_instance.baseUrl;
+
+  var requestObject = {
+    method: 'GET',
+    url: endpoint + '/node/' + $stateParams.nodeId,
+    params: {
+      '_format': 'json'
+    }
+  };
 
   // Get Single Session
-  DrupalSessionsService.get($stateParams.nodeId).then(
+  DrupalNodesService.get(requestObject).then(
     function(response) {
       $scope.session = response;
     },

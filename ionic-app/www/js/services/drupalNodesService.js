@@ -1,20 +1,13 @@
-app_services.factory('DrupalSessionsService', ['$http', '$q', '$filter', 'drupal_instance', function($http, $q, $filter, drupal_instance) {
-
-  var endpoint = drupal_instance.baseUrl;
+app_services.factory('DrupalNodesService', ['$http', '$q', '$filter', 'drupal_instance', function($http, $q, $filter, drupal_instance) {
 
   return {
 
     /*
      * Return All Categories.
      */
-    all: function () {
+    all: function (requestObject) {
       var deferred = $q.defer();
-      $http({
-        method: 'GET',
-        url: endpoint + '/rest/sessions/json',
-        dataType      : 'json',
-        crossDomain   : true
-      }).
+      $http(requestObject).
       success(function (data, status, headers, config) {
         deferred.resolve(data);
       }).
@@ -27,13 +20,7 @@ app_services.factory('DrupalSessionsService', ['$http', '$q', '$filter', 'drupal
 
     get: function(nid) {
       var deferred = $q.defer();
-      $http({
-        method: 'GET',
-        url: endpoint + '/node/' + nid,
-        params: {
-          '_format': 'json',
-        }
-      }).
+      $http(requestObject).
       success(function(data, status, headers, config){
         deferred.resolve(data);
       }).

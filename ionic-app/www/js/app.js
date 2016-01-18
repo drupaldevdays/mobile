@@ -32,43 +32,44 @@ app.run(['$ionicPlatform', '$rootScope', '$state', function($ionicPlatform, $roo
 }]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
 
-    .state('app', {
-      url: '/app',
-      abstract: true,
-      templateUrl: 'templates/menu.html',
-      controller: 'AppCtrl'
-    })
+    $stateProvider
 
-    .state('app.home', {
-      url: '/home',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/home.html'
+      .state('app', {
+        url: '/app',
+        abstract: true,
+        templateUrl: 'templates/menu.html',
+        controller: 'AppCtrl'
+      })
+
+      .state('app.home', {
+        url: '/home',
+        views: {
+          'menuContent': {
+            templateUrl: 'templates/home.html'
+          }
         }
-      }
-    })
-    .state('app.drupal-sessions', {
-      url: "/sessions",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/sessions.html",
-          controller: 'SessionsCtrl'
+      })
+      .state('app.drupal-sessions', {
+        url: "/sessions",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/sessions.html",
+            controller: 'SessionsCtrl'
+          }
         }
-      }
-    })
+      })
 
-    .state('app.drupal-session', {
-      url: "/session/:nodeId",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/session-det.html",
-          controller: 'SessionDetCtrl'
+      .state('app.drupal-session', {
+        url: "/session/:nodeId",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/session-det.html",
+            controller: 'SessionDetCtrl'
+          }
         }
-      }
-    });
+      });
 
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
-});
+    // if none of the above states are matched, use this as the fallback
+    $urlRouterProvider.otherwise('/app/home');
+  });
