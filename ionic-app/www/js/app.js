@@ -50,6 +50,25 @@ app.config(function($stateProvider, $urlRouterProvider) {
           }
         }
       })
+      .state('app.drupal-news', {
+        url: "/news",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/news.html",
+            controller: 'NewsCtrl'
+          }
+        }
+      })
+
+      .state('app.drupal-news-detail', {
+        url: "/news/:nodeId",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/news-det.html",
+            controller: 'NewsDetCtrl'
+          }
+        }
+      })
       .state('app.drupal-sessions', {
         url: "/sessions",
         views: {

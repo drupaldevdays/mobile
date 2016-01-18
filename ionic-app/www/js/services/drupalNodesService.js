@@ -18,7 +18,7 @@ app_services.factory('DrupalNodesService', ['$http', '$q', '$filter', 'drupal_in
       return deferred.promise;
     },
 
-    get: function(nid) {
+    get: function(requestObject) {
       var deferred = $q.defer();
       $http(requestObject).
       success(function(data, status, headers, config){
