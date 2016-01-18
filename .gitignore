@@ -5,3 +5,4 @@ ionic-app/node_modules/
 ionic-app/platforms/
 ionic-app/plugins/
 ionic-app/www/lib
+ionic-app/www/js/config.js

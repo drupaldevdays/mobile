@@ -33,10 +33,18 @@ $ ionic platform add android
 $ cd path/to/root/ddd_website
 $ ln -s /path/to/mobile/ionic-app
 
-#### Configure the link with your specific drupal instance (local host url) in the file: 
-`ionic-app/www-ionic/js/config.js`
+## Configure the app with your specific localhost environment
+
+#### Make a copy of the "config-app.default.js" renaming it "config.js"file and sendint it in the ionic-app/www/js folder
+
+`from the "ionic-app" folder`
+
+$ cp config-app.default.js www/js/config.js
+
 
 #### Set to True the Drupal 8 permission RESTful Web Services => "Access GET on Content resource" to the Anonymous User (otherwise the app won't be able to expose the single Content page)
+
+## Test the application
 
 #### Test it out, as web app, just going here in your local server: 
 
