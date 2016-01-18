@@ -5,5 +5,5 @@ var app_config = angular.module('drupal8-ionic.configuration', []);
  **/
 
 app_config.constant('drupal_instance', {
-  baseUrl: 'http://path/to/ddd_website',
+  baseUrl: 'http://path/to/ddd_website' // NO trailing slash!
 });
