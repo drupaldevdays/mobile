@@ -16,7 +16,7 @@ $ sudo npm install -g cordova
 ### Install Ionic (global)
 $ sudo npm install -g ionic
 
-## Set up & mount in your local environment this ionic mobile test app
+## Set up & mount it in your local environment
 
 #### Position yourself in the ionic-app folder and run the followings commands, it means from the website root:
 
