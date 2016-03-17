@@ -1,4 +1,4 @@
-app_services.factory('DrupalNodesService', ['$http', '$q', '$filter', 'drupal_instance', function($http, $q, $filter, drupal_instance) {
+app_services.factory('DrupalNodesService', ['$http', '$q', '$filter', function($http, $q, $filter) {
 
   return {
 
@@ -12,7 +12,6 @@ app_services.factory('DrupalNodesService', ['$http', '$q', '$filter', 'drupal_in
         deferred.resolve(data);
       }).
       error(function (reason) {
-        console.log(reason);
         deferred.reject(reason);
       });
       return deferred.promise;

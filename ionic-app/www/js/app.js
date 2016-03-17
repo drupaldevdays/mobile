@@ -12,7 +12,12 @@ var app = angular.module('drupal8-ionic', [
   'drupal8-ionic.services',
 ]);
 
-app.run(['$ionicPlatform', '$rootScope', '$state', function($ionicPlatform, $rootScope, $state ) {
+app.run(['$ionicPlatform', '$rootScope', '$state', '$stateParams', function($ionicPlatform, $rootScope, $state, $stateParams) {
+
+  // Make the $state a property of the $rootScope;
+  $rootScope.$state = $state;
+  $rootScope.$stateParams = $stateParams;
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -26,8 +31,6 @@ app.run(['$ionicPlatform', '$rootScope', '$state', function($ionicPlatform, $roo
       StatusBar.styleDefault();
     }
   });
-
-  $rootScope.$state = $state;
 
 }]);
 

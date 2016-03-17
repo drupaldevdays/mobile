@@ -37,7 +37,7 @@ $ ln -s /path/to/mobile/ionic-app
 
 ## Configure the app with your specific localhost environment
 
-#### Make a copy of the "config-app.default.js" renaming it "config.js"file and sendint it in the ionic-app/www/js folder
+#### Make a copy of the "config-app.default.js" renaming it "config.js"file and move it in the ionic-app/www/js folder
 
 `from the "ionic-app" folder`
 

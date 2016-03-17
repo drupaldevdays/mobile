@@ -1,10 +1,11 @@
 app_controllers.controller('SessionsCtrl', ['$scope', '$rootScope', 'DrupalNodesService', 'drupal_instance', function ($scope, $rootScope, DrupalNodesService, drupal_instance) {
 
   var endpoint = drupal_instance.baseUrl;
+  var sessionsResource = drupal_instance.resources.sessions;
 
   var requestObject = {
     method: 'GET',
-    url: endpoint + '/rest/sessions/json',
+    url: endpoint + sessionsResource,
     dataType      : 'json',
     crossDomain   : true
   };

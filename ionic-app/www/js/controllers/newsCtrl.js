@@ -1,10 +1,11 @@
 app_controllers.controller('NewsCtrl', ['$scope', '$rootScope', 'DrupalNodesService', 'drupal_instance', function ($scope, $rootScope, DrupalNodesService, drupal_instance) {
 
   var endpoint = drupal_instance.baseUrl;
+  var newsResource = drupal_instance.resources.news;
 
   var requestObject = {
     method: 'GET',
-    url: endpoint + '/news.json',
+    url: endpoint + newsResource,
     dataType      : 'json',
     crossDomain   : true
   };
