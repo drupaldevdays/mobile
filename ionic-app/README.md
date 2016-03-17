@@ -43,10 +43,7 @@ $ ln -s /path/to/mobile/ionic-app
 
 $ cp config-app.default.js www/js/config.js
 
-## If not, the Rest UI Module ('https://www.drupal.org/project/restui') should be downloaaded and enabled in the D8 Project,
-## and properly set up (admin/config/services/rest) : the "Content" Resource should be enabled with GET action, json format and cookie authenitcation (at least)
-
-#### Set to True the Drupal 8 permission RESTful Web Services => "Access GET on Content resource" to the Anonymous User (otherwise the app won't be able to expose the single Content page)
+#### and update the baseUrl: value with your specific local drupal path
 
 ## Test the application
 
