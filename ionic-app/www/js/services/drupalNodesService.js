@@ -1,34 +1,37 @@
 app_services.factory('DrupalNodesService', ['$http', '$q', '$filter', function($http, $q, $filter) {
-
   return {
-
     /*
-     * Return All Categories.
+     * Return All nodes.
      */
     all: function (requestObject) {
       var deferred = $q.defer();
+
       $http(requestObject).
-      success(function (data, status, headers, config) {
-        deferred.resolve(data);
-      }).
-      error(function (reason) {
-        deferred.reject(reason);
-      });
+        success(function (data, status, headers, config) {
+          deferred.resolve(data);
+        }).
+        error(function (reason) {
+          deferred.reject(reason);
+        });
+
       return deferred.promise;
     },
 
-    get: function(requestObject) {
+    /**
+     * Extract a specific node.
+     */
+    get: function (requestObject) {
       var deferred = $q.defer();
+
       $http(requestObject).
-      success(function(data, status, headers, config){
-        deferred.resolve(data);
-      }).
-      error(function(reason){
-        deferred.reject(reason);
-      });
+        success(function (data, status, headers, config) {
+          deferred.resolve(data);
+        }).
+        error(function (reason) {
+          deferred.reject(reason);
+        });
+
       return deferred.promise;
-    },
-
+    }
   };
-
 }]);

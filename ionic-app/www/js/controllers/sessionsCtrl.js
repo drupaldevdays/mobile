@@ -4,18 +4,18 @@ app_controllers.controller('SessionsCtrl', ['$scope', '$rootScope', 'DrupalNodes
   var sessionsResource = drupal_instance.resources.sessions;
 
   var requestObject = {
-    method: 'GET',
-    url: endpoint + sessionsResource,
+    method        : 'GET',
+    url           : endpoint + sessionsResource,
     dataType      : 'json',
     crossDomain   : true
   };
 
   // Get All Sessions
   DrupalNodesService.all(requestObject).then(
-    function(response) {
+    function (response) {
       $scope.sessions = response;
     },
-    function(error) {
+    function (error) {
       $scope.error = error;
     }
   );
