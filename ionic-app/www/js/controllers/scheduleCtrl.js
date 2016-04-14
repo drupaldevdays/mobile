@@ -1,4 +1,4 @@
-app_controllers.controller('TicketCtrl', ['$scope', '$rootScope', 'DrupalNodesService', 'drupal_instance', function ($scope, $rootScope, DrupalNodesService, drupal_instance) {
+app_controllers.controller('ScheduleCtrl', ['$scope', '$rootScope', 'DrupalNodesService', 'drupal_instance', function ($scope, $rootScope, DrupalNodesService, drupal_instance) {
 /* var endpoint = drupal_instance.baseUrl;
   var infoResource = drupal_instance.resources.info;
 

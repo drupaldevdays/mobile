@@ -40,11 +40,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
       .state('app', {
         url: '/app',
-        abstract: true,
+         abstract: true,
         templateUrl: 'templates/menu.html',
         controller: 'AppCtrl'
       })
-
+/*
       .state('app.home', {
         url: '/home',
         views: {
@@ -52,7 +52,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'templates/home.html'
           }
         }
-      })
+      })*/
       .state('app.drupal-news', {
         url: "/news",
         views: {
@@ -110,12 +110,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
           }
          }
        })
-         .state('app.drupal-ticket', {
-         url:"/ticket",
+         .state('app.drupal-schedule', {
+         url:"/schedule",
          views:{
            'menuContent':{
-            templateUrl:"templates/ticket.html",
-            control:'TicketCtrl'
+            templateUrl:"templates/schedule.html",
+            control:'ScheduleCtrl'
           }
          }
        })
@@ -141,5 +141,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
       ;
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/home');
+    $urlRouterProvider.otherwise('/app/sessions');
   });
