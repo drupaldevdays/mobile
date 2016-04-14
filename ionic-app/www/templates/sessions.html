@@ -1,4 +1,4 @@
-<ion-view view-title="Sessions">
+ <!--<ion-view view-title="Sessions">
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="session in sessions" href="#/app/session/{{session.nid[0].value}}" class="item-text-wrap item-thumbnail-left">
@@ -11,4 +11,61 @@
       </ion-item>
     </ion-list>
   </ion-content>
-</ion-view>
+</ion-view> -->
+
+
+<ion-view  view-title="Sessions"> 
+    <ion-content>
+     <ion-refresher on-refresh="doRefresh()">
+     </ion-refresher>
+
+  <div class="bar item-input-inset bar-light">
+    <label class="item-input-wrapper has-subheader">
+       <i class="icon ion-search placeholder-icon"></i>
+       <input type="search" ng-model="query" placeholder="Search">
+    </label>
+  </div>
+
+    <ion-list>
+     
+       <div class="item item-divider item-positive item-icon-right" href="#">
+           Thursday Jun. 23
+         <i class=" icon ion-ios-arrow-right"></i></div>
+
+
+
+        <ion-item class= "item-icon-right item-text-wrap item-thumbnail-left" ng-class="{'star':session.star}" ng-repeat="session in sessions| filter: query" href="#/app/session/{{session.nid[0].value}}" >
+
+          <img  ng-src="{{session.field_image[0].url}}" alt="{{session.title[0].value}}" ng-if="session.field_image[0].url"/>
+           <img  ng-src="img/img_placeholder.jpg" alt="Image unavailable" ng-if="!session.field_image[0].url"/>
+        <h4>From what time{{session.session_start}} </h4>
+        <p> to {{session.session_end}}</p>
+        
+         
+         <p>{{session.title[0].value}}</p>
+         <p class = " entity-session-track">{{session.field_session_track[0].value}}</p>  
+       
+      
+         <button class="button button-clear icon ion-star button-positive" ng-click="toggleStar(session)"
+         ng-show="session.star"></button>
+         <ion-option-button class="button-positive" ng-click="toggleStar(session)">
+         <i class="icon ion-star"></i></ion-option-button>
+        
+        
+     
+        <i class={{session.session_level}}></i> 
+
+        <p>{{session.body[0].value | truncate: 100 }}<p>
+     
+        <p class="icon-left ion-ios-person-outline"> {{session.field_ddd_session_speakers[0].target_id}}</p>
+
+        <p>{{session.session_details|limitTo:100}}
+        {{session.session_details.length >150 ? '&hellip;' : ''}}</p>
+          
+      </ion-item>
+       </div>
+    </ion-list>
+    
+  </ion-content>
+</ion-view> 
+ 

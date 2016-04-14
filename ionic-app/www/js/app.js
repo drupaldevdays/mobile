@@ -90,7 +90,55 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'SessionDetCtrl'
           }
         }
-      });
+      })
+      .state('app.drupal-info', {
+         url:"/info",
+         views:{
+          'menuContent':{
+            templateUrl:"templates/info.html",
+            control:'InfoCtrl'
+          }
+         }
+       })
+
+       .state('app.drupal-aboutApp', {
+         url:"/aboutApp",
+         views:{
+           'menuContent':{
+            templateUrl:"templates/aboutApp.html",
+            control:'AboutAppCtrl'
+          }
+         }
+       })
+         .state('app.drupal-ticket', {
+         url:"/ticket",
+         views:{
+           'menuContent':{
+            templateUrl:"templates/ticket.html",
+            control:'TicketCtrl'
+          }
+         }
+       })
+
+      .state('app.drupal-sponsors', {
+         url:"/sponsors",
+         views:{
+          'menuContent':{
+            templateUrl:"templates/sponsors.html",
+            control:'SponsorsCtrl'
+         }
+         }
+      })
+       .state('app.drupal-location', {
+         url:"/location",
+         views:{
+          'menuContent':{
+            templateUrl:"templates/location.html",
+            control:'Locationtrl'
+          }
+         }
+       })
+      ;
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
