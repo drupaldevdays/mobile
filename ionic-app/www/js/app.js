@@ -129,16 +129,25 @@ app.config(function($stateProvider, $urlRouterProvider) {
          }
          }
       })
+      .state('app.drupal-usefullinks', {
+         url:"/usefullinks",
+         views:{
+          'menuContent':{
+            templateUrl:"templates/usefullinks.html",
+            control:'UsefullinksCtrl'
+          }
+         }
+       })
+
        .state('app.drupal-location', {
          url:"/location",
          views:{
           'menuContent':{
             templateUrl:"templates/location.html",
-            control:'Locationtrl'
+            control:'LocationCtrl'
           }
          }
-       })
-      ;
+       });
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/sessions');

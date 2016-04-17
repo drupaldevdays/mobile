@@ -7,7 +7,8 @@
   },
   "dependencies": {
     "ngstorage": "~0.3.10",
-    "gulp": "~3.9.0"
+    "gulp": "~3.9.0",
+    "font-awesome": "fontawesome#^4.6.1"
   },
   "resolutions": {
     "angular": "1.4.3"

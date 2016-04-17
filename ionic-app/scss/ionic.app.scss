@@ -1,4 +1,6 @@
 $positive: #920410 ;
+$balanced: #02A057;
+$assertive:#DC4244;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
@@ -9,3 +11,5 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include overriding css files
 @import "scss/style.scss";
 
+//Import font awesome
+@import "www/lib/font-awesome/scss/font-awesome";
