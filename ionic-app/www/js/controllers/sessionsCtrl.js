@@ -13,16 +13,23 @@ app_controllers.controller('SessionsCtrl', ['$scope', '$rootScope', 'DrupalNodes
   // Get All Sessions
   DrupalNodesService.all(requestObject).then(
     function (response) {
-      $scope.sessions = response;
-      $scope.toggleStar=function(session){
-         session.star=!session.star;
+      $scope.sessions = response.map(function (session) {
+        session.speakers = JSON.parse(session.speakers);
+
+        return session;
+      });
+
+
+      $scope.toggleStar = function (session) {
+         session.star = !session.star;
       };
-      $scope.doRefresh= function(){
+
+      $scope.doRefresh = function () {
         $scope.$broadcast('scroll.refreshComplete');
       };
     },
     function (error) {
       $scope.error = error;
     }
-  ); 
+  );
 }]);

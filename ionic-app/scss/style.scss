@@ -30,8 +30,8 @@ ion-item {
 .item-thumbnail-left .item-content > img:first-child {
   height: auto !important;
 }
-  
- /*--YI add the following lines. Take this comment away after checked--*/ 
+
+ /*--YI add the following lines. Take this comment away after checked--*/
 
 /*--menu page--*/
 
@@ -63,7 +63,7 @@ ion-item {
   clear:both;
   background-color:red;
   float:right;
-  
+
 }
 /*--end of sessions page--*/
 
@@ -73,7 +73,7 @@ ion-item {
 
 /*sponsor page icon*/
 .heart {
-  color: red; 
+  color: red;
 }
 
 /* sponser page is covered by bar. move down*/
@@ -106,7 +106,7 @@ ion-item {
 
 
 .bar-positive{
-  
+
   opacity:0.85;
 }
 .session-header{
@@ -136,6 +136,7 @@ ion-item {
 }
 /*--end of ticket page--*/
 
+
 /*--usefullinks--*/
 
 .bannerbottom{
@@ -144,7 +145,6 @@ ion-item {
   height:200px;
   margin-bottom:0px;
 }
- 
 
 /*--end of useful links--*/
 
@@ -154,3 +154,32 @@ ion-item {
   color:#920410!important;
 }
 /*--end of useful link page--*/
+
+.item-thumbnail-left .item-content .item-image-0 {
+  // clip: rect(0px, 80px, 80px, 0px);
+  -webkit-clip-path: polygon(0 0, 80px 0, 80px 80px, 0 80px);
+  clip-path: polygon(0 0, 80px 0, 80px 80px, 0 80px);
+}
+
+.item-thumbnail-left .item-content .item-image-1 {
+  // clip: rect(0px, 40px, 80px, 0px);
+  -webkit-clip-path: polygon(40px 0, 80px 0, 80px 80px, 40px 80px);
+  clip-path: polygon(40px 0, 80px 0, 80px 80px, 40px 80px);
+}
+
+.item-thumbnail-left .item-content .item-image-2 {
+  // clip: rect(40px, 80px, 80px, 0px);
+  -webkit-clip-path: polygon(0 40px, 80px 40px, 80px 80px, 0 80px);
+  clip-path: polygon(0 40px, 80px 40px, 80px 80px, 0 80px);
+}
+
+.item-thumbnail-left .item-content .item-image-3 {
+  // clip: rect(40px, 80px, 80px, 40px);
+  -webkit-clip-path: polygon(40px 40px, 80px 40px, 80px 80px, 40px 80px);
+  clip-path: polygon(40px 40px, 80px 40px, 80px 80px, 40px 80px);
+}
+
+.entity-session-track-image {
+  background-size: cover;
+  height: 150px;
+}

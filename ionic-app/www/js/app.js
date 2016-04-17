@@ -10,6 +10,7 @@ var app = angular.module('drupal8-ionic', [
   'drupal8-ionic.filters',
   'drupal8-ionic.controllers',
   'drupal8-ionic.services',
+  'truncate'
 ]);
 
 app.run(['$ionicPlatform', '$rootScope', '$state', '$stateParams', function($ionicPlatform, $rootScope, $state, $stateParams) {
