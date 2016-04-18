@@ -1,25 +1,26 @@
-app_controllers.controller('NewsDetCtrl', ['$scope', '$rootScope', '$stateParams', 'DrupalNodesService', 'drupal_instance',  function ($scope, $rootScope, $stateParams, DrupalNodesService, drupal_instance) {
-  var endpoint = drupal_instance.baseUrl;
+
+app_controllers.controller('ShareCtrl', ['$scope', '$rootScope', 'DrupalNodesService', 'drupal_instance','$cordovaSocialSharing', function ($scope, $rootScope, DrupalNodesService, drupal_instance,$cordovaSocialSharing) {
+/* var endpoint = drupal_instance.baseUrl;
+  var infoResource = drupal_instance.resources.info;
 
   var requestObject = {
-    method  : 'GET',
-    url     : endpoint + '/node/' + $stateParams.nodeId,
-    params  : {
-      '_format': 'json'
-    }
+    method        : 'GET',
+    url           : endpoint + infoResource,
+    dataType      : 'json',
+    crossDomain   : true
   };
 
-  // Get Single Session
-  DrupalNodesService.get(requestObject).then(
+  // Get All Sessions
+  DrupalNodesService.all(requestObject).then(
     function (response) {
-      $scope.newsdet = response;
+      $scope.info = response;
     },
     function (error) {
       $scope.error = error;
     }
-  );
-  
-    $scope.shareAnywhere = function() {
+  );*/
+
+/*    $scope.shareAnywhere = function() {
         $cordovaSocialSharing.share("I would like to share this news with you!", "This is your subject", "www/img/ionic.png", "http://milan2016.drupaldays.org/news")
             .then(function(result) {
               console.log('sucess');
@@ -53,5 +54,5 @@ app_controllers.controller('NewsDetCtrl', ['$scope', '$rootScope', '$stateParams
             }, function(err) {
                 console.log('An error occured');
             });
-    };
+    };*/
 }]);

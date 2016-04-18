@@ -18,7 +18,7 @@ app_controllers.controller('UsefullinksCtrl', ['$scope', '$rootScope', '$statePa
       $scope.error = error;
     }
   );*/
-
+/*
  
     $scope.images = [];
  
@@ -26,7 +26,7 @@ app_controllers.controller('UsefullinksCtrl', ['$scope', '$rootScope', '$statePa
         for(var i = 0; i < 24; i++) {
             $scope.images.push({id: i, src: "http://placehold.it/50x50"});
         }
-    };
+    };*/
  
 
 }]);

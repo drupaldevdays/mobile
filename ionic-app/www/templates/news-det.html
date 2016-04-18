@@ -14,22 +14,28 @@
      
    </ion-content>
   
-
-   <ion-footer>
-   <!--ng-cordova/src/plugins/socialSharing.js-->
-   <!--https://github.com/driftyco/ng-cordova/blob/master/src/plugins/socialSharing.js-->
+ <!--ng-controller="ShareController"-->
+   <ion-footer >
+  
    <div class="tabs tabs-icon-only">
+
       <a class="tab-item">
-        <button class="icon ion-social-facebook button"></button>
+
+        <button class="icon ion-share button" ng-click="shareAnywhere()"></button>
       </a>
       <a class="tab-item">
-           <button class="icon ion-social-twitter button"></button>
+
+        <button class="icon ion-social-facebook button" ng-click="shareViaFacebook('some message', null, 'http://milan2016.drupaldays.org/news')" ></button>
       </a>
       <a class="tab-item">
-          <button class="icon ion-social-googleplus button"></button>
+           <button class="icon ion-social-twitter button" ng-click="shareViaTwitter('some message', null, 'http://milan2016.drupaldays.org/news')"></button>
+      </a>
+      <a class="tab-item">
+          <button class="icon ion-social-whatsapp button" ng-click="shareViaWhatsApp('some message', null, 'http://milan2016.drupaldays.org/news')"></button>
       </a>
   </div>
  
   </ion-footer>
 
 </ion-view>
+

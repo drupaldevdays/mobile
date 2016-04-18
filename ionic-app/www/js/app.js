@@ -69,9 +69,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
           'menuContent': {
             templateUrl: "templates/news-det.html",
             controller: 'NewsDetCtrl'
+          
           }
         }
       })
+/*       .state('app.drupal-share', {
+        url: "/news/:nodeId",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/news-det.html",
+            controller: 'ShareCtrl'
+          }
+        }
+      })*/
       .state('app.drupal-sessions', {
         url: "/sessions",
         views: {
@@ -148,6 +158,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
           }
          }
        });
+
+   
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/sessions');
