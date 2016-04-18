@@ -20,7 +20,7 @@ app_controllers.controller('ShareCtrl', ['$scope', '$rootScope', 'DrupalNodesSer
     }
   );*/
 
-/*    $scope.shareAnywhere = function() {
+   $scope.shareAnywhere = function() {
         $cordovaSocialSharing.share("I would like to share this news with you!", "This is your subject", "www/img/ionic.png", "http://milan2016.drupaldays.org/news")
             .then(function(result) {
               console.log('sucess');
@@ -54,5 +54,5 @@ app_controllers.controller('ShareCtrl', ['$scope', '$rootScope', 'DrupalNodesSer
             }, function(err) {
                 console.log('An error occured');
             });
-    };*/
+    }
 }]);

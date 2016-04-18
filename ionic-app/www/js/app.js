@@ -44,15 +44,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/menu.html',
         controller: 'AppCtrl'
       })
-/*
-      .state('app.home', {
-        url: '/home',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/home.html'
-          }
-        }
-      })*/
+
       .state('app.drupal-news', {
         url: "/news",
         views: {
@@ -63,7 +55,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       })
 
-      .state('app.drupal-news-detail', {
+   .state('app.drupal-news-detail', {
         url: "/news/:nodeId",
         views: {
           'menuContent': {
@@ -73,6 +65,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
           }
         }
       })
+   /*    .state('app.drupal-news-detail', {
+        url: "/news/:nodeId",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/news-det.html",
+            controller: 'NewsDetCtrl'
+          
+          },
+          "share":{
+            template:"templates/share.html"
+          }
+        }
+      })*/
 /*       .state('app.drupal-share', {
         url: "/news/:nodeId",
         views: {
