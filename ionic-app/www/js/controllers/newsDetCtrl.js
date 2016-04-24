@@ -18,4 +18,6 @@ app_controllers.controller('NewsDetCtrl', ['$scope', '$rootScope', '$stateParams
       $scope.error = error;
     }
   );
+  
+
 }]);

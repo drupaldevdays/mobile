@@ -40,19 +40,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
       .state('app', {
         url: '/app',
-        abstract: true,
+         abstract: true,
         templateUrl: 'templates/menu.html',
         controller: 'AppCtrl'
       })
 
-      .state('app.home', {
-        url: '/home',
-        views: {
-          'menuContent': {
-            templateUrl: 'templates/home.html'
-          }
-        }
-      })
       .state('app.drupal-news', {
         url: "/news",
         views: {
@@ -63,15 +55,38 @@ app.config(function($stateProvider, $urlRouterProvider) {
         }
       })
 
-      .state('app.drupal-news-detail', {
+   .state('app.drupal-news-detail', {
         url: "/news/:nodeId",
         views: {
           'menuContent': {
             templateUrl: "templates/news-det.html",
             controller: 'NewsDetCtrl'
+          
           }
         }
       })
+   /*    .state('app.drupal-news-detail', {
+        url: "/news/:nodeId",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/news-det.html",
+            controller: 'NewsDetCtrl'
+          
+          },
+          "share":{
+            template:"templates/share.html"
+          }
+        }
+      })*/
+/*       .state('app.drupal-share', {
+        url: "/news/:nodeId",
+        views: {
+          'menuContent': {
+            templateUrl: "templates/news-det.html",
+            controller: 'ShareCtrl'
+          }
+        }
+      })*/
       .state('app.drupal-sessions', {
         url: "/sessions",
         views: {
@@ -110,12 +125,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
           }
          }
        })
-         .state('app.drupal-ticket', {
-         url:"/ticket",
+         .state('app.drupal-schedule', {
+         url:"/schedule",
          views:{
            'menuContent':{
-            templateUrl:"templates/ticket.html",
-            control:'TicketCtrl'
+            templateUrl:"templates/schedule.html",
+            control:'ScheduleCtrl'
           }
          }
        })
@@ -129,17 +144,28 @@ app.config(function($stateProvider, $urlRouterProvider) {
          }
          }
       })
+      .state('app.drupal-usefullinks', {
+         url:"/usefullinks",
+         views:{
+          'menuContent':{
+            templateUrl:"templates/usefullinks.html",
+            control:'UsefullinksCtrl'
+          }
+         }
+       })
+
        .state('app.drupal-location', {
          url:"/location",
          views:{
           'menuContent':{
             templateUrl:"templates/location.html",
-            control:'Locationtrl'
+            control:'LocationCtrl'
           }
          }
-       })
-      ;
+       });
+
+   
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/home');
+    $urlRouterProvider.otherwise('/app/sessions');
   });
