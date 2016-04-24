@@ -1,4 +1,4 @@
-<ion-view view-title="{{session.title[0].value}}">
+<!-- <ion-view view-title="{{session.title[0].value}}">
     <ion-content class="padding">
       <div class="entity-session-track">{{session.field_session_track[0].value}}</div>
       <h2 class="entity-title"><strong>{{session.title[0].value}}</strong></h2>
@@ -7,4 +7,49 @@
       <img  ng-src="img/img_placeholder.jpg" alt="Image unavailable" ng-if="session.title[0].value" ng-hide="session.field_image[0].url"/>
       <article ng-bind-html="session.body[0].value"></article>
     </ion-content>
+</ion-view> -->
+<ion-view view-title="Session">
+  <ion-content>
+    <img class="full-image" src="img/flag.jpg">
+    <!-- <div class="list"> -->
+    	<label class="item item-positive" align="center">
+          <h2 class="header session-header ">{{session.title[0].value}}</h2>
+          <p class="title session-title"> Sat 11:50-12:35 in Room 205{{session.field_room}}</p> 
+        </label>
+
+    
+    <div class="block block-positive">
+    </div>
+   
+   <div class="item item-session">
+    <i class = " entity-session-track">{{session.field_session_track[0].value}}</i>
+      <br>
+      <br>
+     <p> Experience level: {{session.field_exp_level[0].value}}</p>
+    
+     <p >
+        <a href="#" class="subdued">1 Like</a>
+        <a href="#" class="subdued">5 Comments</a>
+
+      </p>
+      
+   </div>
+  
+    
+  <div class="list-card">
+   <div class="item item-avatar">
+    <img src="img/mrDrupal.jpeg">
+    <h2>{{session.field_ddd_session_speakers[0].target_id}}</h2>
+
+    <p>Drupal some company/Engineer, Develop</p>
+    </div>
+ 
+     <div class="item item-body">  
+    
+ 		<p ng-bind-html="session.body[0].value"></p>
+    
+  </div>
+
+
+  </ion-content>
 </ion-view>

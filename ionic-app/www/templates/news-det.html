@@ -1,9 +1,34 @@
-<ion-view view-title="{{newsdet.title[0].value}}">
-    <ion-content class="padding">
+<ion-view view-title="News in details or better name?">
+    <ion-content>
+     <div class="item item-body without-border-bottom">
       <h2 class="entity-title"><strong>{{newsdet.title[0].value}}</strong></h2>
+
       <div class="entity-room" ng-if="newsdet.field_room[0].value">{{newsdet.field_room[0].value}}</div>
-      <img  ng-src="{{newsdet.field_image[0].url}}" alt="{{newsdet.title[0].value}}" ng-show="newsdet.field_image[0].url" style="height:200px;" />
-      <img  ng-src="img/img_placeholder.jpg" alt="Image unavailable" ng-if="newsdet.title[0].value" ng-hide="newsdet.field_image[0].url"/>
-      <article ng-bind-html="newsdet.body[0].value"></article>
-    </ion-content>
+     
+   		 <img  class="newsDetImage" ng-src="{{newsdet.field_image[0].url}}"  alt="{{newsdet.title[0].value}}" ng-show="newsdet.field_image[0].url" />
+   		 <img  ng-src="img/img_placeholder.jpg" alt="Image unavailable" ng-if="newsdet.title[0].value" ng-hide="newsdet.field_image[0].url"/>
+   	  <p ng-bind-html="newsdet.body[0].value"></p>
+   
+     <p><a href="#" class="subdued">@Drupal Milan Team</a></p>
+   </div>
+     
+   </ion-content>
+  
+
+   <ion-footer>
+
+   <div class="tabs tabs-icon-only">
+      <a class="tab-item">
+        <button class="icon ion-social-facebook button"></button>
+      </a>
+      <a class="tab-item">
+           <button class="icon ion-social-twitter button"></button>
+      </a>
+      <a class="tab-item">
+          <button class="icon ion-social-googleplus button"></button>
+      </a>
+  </div>
+ 
+  </ion-footer>
+
 </ion-view>
