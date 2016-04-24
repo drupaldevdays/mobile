@@ -12,7 +12,7 @@
   "proxies": [
     {
       "path": "/web",
-      "proxyUrl": "http://milan2016.drupaldays.loc"
+      "proxyUrl": "http://milan2016.drupaldays.org"
     }
   ]
 }
