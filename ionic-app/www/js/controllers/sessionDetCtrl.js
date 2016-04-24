@@ -3,7 +3,7 @@ app_controllers.controller('SessionDetCtrl', ['$scope', '$rootScope', '$statePar
 
   var requestObject = {
     method  : 'GET',
-    url     : endpoint + '/node/' + $stateParams.nodeId,
+    url     : endpoint + '/rest/session/' + $stateParams.nodeId + '/json',
     params  : {
       '_format': 'json'
     }
@@ -12,7 +12,11 @@ app_controllers.controller('SessionDetCtrl', ['$scope', '$rootScope', '$statePar
   // Get Single Session
   DrupalNodesService.get(requestObject).then(
     function (response) {
-      $scope.session = response;
+      var session = response[0];
+
+      session.speakers = JSON.parse(session.speakers);
+
+      $scope.session = session;
     },
     function (error) {
       $scope.error = error;

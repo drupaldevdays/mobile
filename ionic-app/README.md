@@ -6,45 +6,41 @@ A Ionic / Angular Mobile Application that interacts with the Drupal 8 Dev Days (
 
 #### Contributors:
 
+ * Yi Yuan
  * Italo Mairo (www.italomairo.com)
+ * Marco Vito Moscaritolo (https://twitter.com/mavimo)
+ * Claudio Beatrice (https://twitter.com/omissis)
 
 ## Global requirements
 
 To work with mobile app you need to have:
 
- * NodeJS
- * Cordova
- * Ionic
+ * [NodeJS](https://nodejs.org/en/)
+ * [Cordova](https://cordova.apache.org/)
+ * [Ionic](http://ionicframework.com/)
 
-For more info see the [ionic website](http://ionicframework.com/docs/guide/installation.html).
+After setting up node.js, you will need to install [Cordova](https://cordova.apache.org/) and [Ionic](http://ionicframework.com/):
 
-To install *Node.js* follow the official documentation to install [Node.js 4](https://nodejs.org/en/) (Node 5 does not work at the moment!).
-
-After the Node.JS setup you need to install [Cordova](https://cordova.apache.org/):
-
-    $ sudo npm install -g cordova
-
-And [Ionic](http://ionicframework.com/):
-
-    $ sudo npm install -g ionic
+    $ sudo npm install -g cordova ionic
 
 ## Project set-up (local environment)
 
-Position yourself in the `ionic-app` folder and run the followings commands, it means from the website root:
+Open the `ionic-app` folder in your terminal and run the followings commands:
 
     $ cd ionic-app
     $ npm install
     $ bower install
 
-Enable the iOS and Android platforms
+Then enable the iOS and Android platforms:
 
     $ ionic platform add ios
     $ ionic platform add android
 
 #### Fix CORS issue
 
-Drupal 8 ReST doesn't support CORS yet so the app directory should be hosted on the same hostname and port as the Drupal 8 instance running the ReST api. The easiest way is to copy or symlink the app directory from this repo to to root of your Drupal 8 installation
-Go to your Drupal 8 DDD website root directory and make the symlink to the ionic app
+Drupal 8 doesn't support CORS yet, so the app directory should be hosted on the same hostname and port as the Drupal 8 instance running the ReST api. The easiest way to achieve that is to copy or symlink the app directory from this repo to the root of your Drupal 8 installation.
+
+If you decide to use the symlink, type:
 
     $ cd path/to/root/ddd_website
     $ ln -s /path/to/mobile/ionic-app
