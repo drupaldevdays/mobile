@@ -4,9 +4,9 @@ ion-view.home div#home-logo {
 }
 
 ion-content, ion-item {
-  .entity-type, .entity-session-track {
+  .entity-type,
+  .entity-session-track {
     font-size: 0.85em;
-    color: red;
     margin: 0 0 4px 0;
   }
   .entity-room {

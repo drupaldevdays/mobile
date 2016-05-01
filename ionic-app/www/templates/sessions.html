@@ -1,53 +1,23 @@
 <ion-view  view-title="Sessions">
-    <ion-content>
-        <ion-refresher on-refresh="doRefresh()">
-        </ion-refresher>
+  <ion-tabs class="tabs-positive tabs-icon-top">
+    <ion-tab ng-repeat="day in conferenceDays"
+             title="{{ day|date:'d MMMM' }}"
+             icon-on="ion-calendar"
+             icon-off="ion-calendar"
+             href="#/app/sessions/{{ day|date:'y-MM-d' }}">
+    </ion-tab>
+  </ion-tabs>
 
-        <div class="bar item-input-inset bar-light">
-            <label class="item-input-wrapper has-subheader">
-                <i class="icon ion-search placeholder-icon"></i>
-                <input type="search" ng-model="query" placeholder="Search">
-            </label>
-        </div>
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-icon-right item-text-wrap item-thumbnail-left"
+                href="#/app/session/{{ session.id }}"
+                ng-class="{'star': session.star}"
+                ng-repeat="session in sessions | filter: query">
 
-        <ion-list>
-            <div class="item item-divider item-positive item-icon-right" href="#">
-                Thursday Jun. 23
-                <i class="icon ion-ios-arrow-right"></i>
-            </div>
-
-            <ion-item class="item-icon-right item-text-wrap item-thumbnail-left"
-                      href="#/app/session/{{ session.id }}"
-                      ng-class="{'star': session.star}"
-                      ng-repeat="session in sessions | filter: query">
-
-                <img class="item-image item-image-{{ $index }}"
-                     alt="{{ speaker.username }}"
-                     ng-src="{{ speaker.avatar }}"
-                     ng-if="speaker.avatar"
-                     ng-repeat="speaker in session.speakers | limitTo : 4"/>
-
-                <p class="entity-session-title">{{ session.title }}</p>
-                <p class="entity-session-time">Time: {{ session.time_slot }}</p>
-                <p class="entity-session-room">Room: {{ session.room }}</p>
-                <p class="entity-session-track">Track: {{ session.track }}</p>
-
-                <button class="button button-clear icon ion-star button-positive" ng-click="toggleStar(session)"
-                ng-show="session.star"></button>
-
-                <ion-option-button class="button-positive" ng-click="toggleStar(session)">
-                    <i class="icon ion-star"></i>
-                </ion-option-button>
-
-                <i class="entity-session-level">{{ session.level }}</i>
-
-                <p ng-bind-html="session.body | truncate: 100"></p>
-
-                <p class="icon-left ion-ios-person-outline" ng-repeat="speaker in session.speakers">
-                    {{ speaker.username }}
-                </p>
-            </ion-item>
-        </ion-list>
-    </ion-content>
+        <ddd-session session="session"></ddd-session>
+      </ion-item>
+    </ion-list>
+  </ion-content>
 </ion-view>
 

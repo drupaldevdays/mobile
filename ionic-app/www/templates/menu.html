@@ -1,57 +1,48 @@
 <ion-side-menus enable-menu-with-back-views="false">
-
   <ion-side-menu-content>
-
     <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-back-button>
+      </ion-nav-back-button>
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
       </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <a href="#/app/search">
+          <button class="button button-icon button-clear icon ion-ios-search" ng-show="$state.current.url!='/search'"></button>
+        </a>
+      </ion-nav-buttons>
     </ion-nav-bar>
-
-    <ion-nav-view name="menuContent"></ion-nav-view>
-
+    <ion-nav-view name="menuContent">
+    </ion-nav-view>
   </ion-side-menu-content>
-
   <ion-side-menu side="left">
-
     <ion-header-bar class="bar-positive">
       <h1 class="title">Menu</h1>
     </ion-header-bar>
-
     <ion-content>
       <ion-list>
-
-      
-  
-        <ion-item menu-close href="#/app/news" ng-show="$state.current.url!='/news'">
-           <i class='ion-ios-paper-outline'></i> News
+        <ion-item menu-close href="#/app/news" ng-class="{ 'active': $state.current.url.startsWith('/news') }">
+          <i class='ion-ios-paper-outline' ></i>News
         </ion-item>
-        <ion-item menu-close href="#/app/sessions" ng-show="$state.current.url!='/sessions'">
-          <i class='ion-ios-calendar-outline'></i> Sessions
+        <ion-item menu-close href="#/app/sessions" ng-class="{ 'active': $state.current.url.startsWith('/sessions') }">
+          <i class='ion-ios-calendar-outline'></i>Sessions
         </ion-item>
-        <ion-item menu-close href="#/app/schedule" ng-show="$state.current.url!='/schedule'">
-          <i class='ion-ios-star-outline'></i> My schedule
+        <ion-item menu-close href="#/app/schedule" ng-class="{ 'active': $state.current.url.startsWith('/schedule') }">
+          <i class='ion-ios-star-outline'></i>My schedule
         </ion-item>
-         <ion-item menu-close href="#/app/location" ng-show="$state.current.url!='/location'">
-          <i class='ion-ios-location-outline'></i> Location
+        <ion-item menu-close href="#/app/location" ng-class="{ 'active': $state.current.url.startsWith('/location') }">
+          <i class='ion-ios-location-outline'></i>Location
         </ion-item>
-         <ion-item menu-close href="#/app/info" ng-show="$state.current.url!='/info'">
-           <i class='ion-ios-information-outline'></i> Info
+        <ion-item menu-close href="#/app/info" ng-class="{ 'active': $state.current.url.startsWith('/info') }">
+          <i class='ion-ios-information-outline'></i>Info
         </ion-item>
-         
-       
-       
       </ion-list>
     </ion-content>
-
     <div class="bar bar-subfooter">
       <h5 class="item-content"align="center">Milan, Italy 21-26 June 2016</h5>
     </div>
- 
     <footer class="bar bar-footer footerDividerLine">
       <h5 class="title" align-title="center">Drupal Developer Days</h5>
     </footer>
-   
   </ion-side-menu>
 </ion-side-menus>

@@ -1,32 +1,25 @@
-app_controllers.controller('SessionsCtrl', ['$scope', '$rootScope', 'DrupalNodesService', 'drupal_instance',function ($scope, $rootScope, DrupalNodesService, drupal_instance) {
+app_controllers.controller('SessionsCtrl', ['$scope', '$rootScope', 'SessionsService', '$stateParams', 'dddConference', function ($scope, $rootScope, SessionsService, $stateParams, dddConference) {
+  // Current date
+  var date = $stateParams.date;
+  $scope.date = new Date(date);
+  $scope.conferenceDays = dddConference.days
 
-  var endpoint = drupal_instance.baseUrl;
-  var sessionsResource = drupal_instance.resources.sessions;
+  $scope.toggleStar = function (session) {
+     session.star = !session.star;
+  };
 
-  var requestObject = {
-    method        : 'GET',
-    url           : endpoint + sessionsResource,
-    dataType      : 'json',
-    crossDomain   : true
+  $scope.doRefresh = function () {
+    $scope.$broadcast('scroll.refreshComplete');
   };
 
   // Get All Sessions
-  DrupalNodesService.all(requestObject).then(
+  SessionsService.getAllSessionsByDay(date).then(
     function (response) {
       $scope.sessions = response.map(function (session) {
         session.speakers = JSON.parse(session.speakers);
 
         return session;
       });
-
-
-      $scope.toggleStar = function (session) {
-         session.star = !session.star;
-      };
-
-      $scope.doRefresh = function () {
-        $scope.$broadcast('scroll.refreshComplete');
-      };
     },
     function (error) {
       $scope.error = error;

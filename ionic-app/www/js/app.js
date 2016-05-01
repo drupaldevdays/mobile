@@ -1,20 +1,15 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.controllers' is found in controllers.js
+// Drupal Dev Days Milan 2016
 var app = angular.module('drupal8-ionic', [
   'ionic',
   'drupal8-ionic.configuration',
   'drupal8-ionic.filters',
   'drupal8-ionic.controllers',
   'drupal8-ionic.services',
+  'drupal8-ionic.directives',
   'truncate'
 ]);
 
 app.run(['$ionicPlatform', '$rootScope', '$state', '$stateParams', function($ionicPlatform, $rootScope, $state, $stateParams) {
-
   // Make the $state a property of the $rootScope;
   $rootScope.$state = $state;
   $rootScope.$stateParams = $stateParams;
@@ -63,7 +58,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     })
 
     .state('app.drupal-sessions', {
-      url: "/sessions",
+      url: "/sessions/:date",
+      cache: false,
       views: {
         'menuContent': {
           templateUrl: "templates/sessions.html",
@@ -143,5 +139,5 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/sessions');
+  $urlRouterProvider.otherwise('/app/sessions/2016-06-23');
 });

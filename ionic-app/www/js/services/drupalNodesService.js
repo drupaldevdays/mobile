@@ -1,6 +1,6 @@
-app_services.factory('DrupalNodesService', ['$http', '$q', '$filter', function($http, $q, $filter) {
+app_services.factory('DrupalNodesService', ['$http', '$q', function ($http, $q) {
   return {
-    /*
+    /**
      * Return All nodes.
      */
     all: function (requestObject) {
