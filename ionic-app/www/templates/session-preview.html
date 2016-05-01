@@ -1,0 +1,29 @@
+<div class="session-teaser">
+  <h2 class="entity-session-title">{{ session.title }}</h2>
+
+  <img class="item-image item-image-{{ $index }}"
+      alt="{{ speaker.username }}"
+      ng-src="{{ speaker.avatar }}"
+      ng-if="speaker.avatar"
+      ng-repeat="speaker in session.speakers | limitTo : 4"/>
+
+  <hr />
+  <p class="entity-session-time"  ng-if="session.time_slot" >Time: {{ session.time_slot }}</p>
+  <p class="entity-session-room"  ng-if="session.room"      >Room: {{ session.room }}</p>
+  <p class="entity-session-track" ng-if="session.track"     >Track: {{ session.track }}</p>
+  <p class="entity-session-level" ng-if="session.level"     >Level: {{ session.level }}</p>
+  <hr />
+  <p ng-bind="session.body | htmlToPlaintext | truncate: 100"></p>
+  <hr />
+  <p class="icon-left ion-ios-person-outline" ng-repeat="speaker in session.speakers">
+    {{ speaker.username }}
+  </p>
+
+  <button class="button button-clear icon ion-star button-positive"
+      ng-click="toggleStar(session)"
+      ng-show="session.star"></button>
+
+  <ion-option-button class="button-positive" ng-click="toggleStar(session)">
+    <i class="icon ion-star"></i>
+  </ion-option-button>
+</div>
