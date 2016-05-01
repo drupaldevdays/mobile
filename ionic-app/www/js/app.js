@@ -20,153 +20,128 @@ app.run(['$ionicPlatform', '$rootScope', '$state', '$stateParams', function($ion
   $rootScope.$stateParams = $stateParams;
 
   $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
+    // Hide the accessory bar by default (remove this to show the accessory bar
+    // above the keyboard for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
-
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
   });
-
 }]);
 
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider) {
+  $stateProvider
+    .state('app', {
+      url: '/app',
+      abstract: true,
+      templateUrl: 'templates/menu.html',
+      controller: 'AppCtrl'
+    })
 
-    $stateProvider
-
-      .state('app', {
-        url: '/app',
-         abstract: true,
-        templateUrl: 'templates/menu.html',
-        controller: 'AppCtrl'
-      })
-
-      .state('app.drupal-news', {
-        url: "/news",
-        views: {
-          'menuContent': {
-            templateUrl: "templates/news.html",
-            controller: 'NewsCtrl'
-          }
+    .state('app.drupal-news', {
+      url: "/news",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/news.html",
+          controller: 'NewsCtrl'
         }
-      })
+      }
+    })
 
-   .state('app.drupal-news-detail', {
-        url: "/news/:nodeId",
-        views: {
-          'menuContent': {
-            templateUrl: "templates/news-det.html",
-            controller: 'NewsDetCtrl'
-          
-          }
+    .state('app.drupal-news-detail', {
+      url: "/news/:nodeId",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/news-det.html",
+          controller: 'NewsDetCtrl'
         }
-      })
-   /*    .state('app.drupal-news-detail', {
-        url: "/news/:nodeId",
-        views: {
-          'menuContent': {
-            templateUrl: "templates/news-det.html",
-            controller: 'NewsDetCtrl'
-          
-          },
-          "share":{
-            template:"templates/share.html"
-          }
+      }
+    })
+
+    .state('app.drupal-sessions', {
+      url: "/sessions",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/sessions.html",
+          controller: 'SessionsCtrl'
         }
-      })*/
-/*       .state('app.drupal-share', {
-        url: "/news/:nodeId",
-        views: {
-          'menuContent': {
-            templateUrl: "templates/news-det.html",
-            controller: 'ShareCtrl'
-          }
+      }
+    })
+
+    .state('app.drupal-session', {
+      url: "/session/:nodeId",
+      views: {
+        'menuContent': {
+          templateUrl: "templates/session-det.html",
+          controller: 'SessionDetCtrl'
         }
-      })*/
-      .state('app.drupal-sessions', {
-        url: "/sessions",
-        views: {
-          'menuContent': {
-            templateUrl: "templates/sessions.html",
-            controller: 'SessionsCtrl'
-          }
+      }
+    })
+
+    .state('app.drupal-info', {
+      url:"/info",
+      views:{
+        'menuContent':{
+          templateUrl:"templates/info.html",
+          control:'InfoCtrl'
         }
-      })
+      }
+    })
 
-      .state('app.drupal-session', {
-        url: "/session/:nodeId",
-        views: {
-          'menuContent': {
-            templateUrl: "templates/session-det.html",
-            controller: 'SessionDetCtrl'
-          }
+    .state('app.drupal-aboutApp', {
+      url:"/aboutApp",
+      views:{
+        'menuContent':{
+          templateUrl:"templates/aboutApp.html",
+          control:'AboutAppCtrl'
         }
-      })
-      .state('app.drupal-info', {
-         url:"/info",
-         views:{
-          'menuContent':{
-            templateUrl:"templates/info.html",
-            control:'InfoCtrl'
-          }
-         }
-       })
+      }
+    })
 
-       .state('app.drupal-aboutApp', {
-         url:"/aboutApp",
-         views:{
-           'menuContent':{
-            templateUrl:"templates/aboutApp.html",
-            control:'AboutAppCtrl'
-          }
-         }
-       })
-         .state('app.drupal-schedule', {
-         url:"/schedule",
-         views:{
-           'menuContent':{
-            templateUrl:"templates/schedule.html",
-            control:'ScheduleCtrl'
-          }
-         }
-       })
+    .state('app.drupal-schedule', {
+      url:"/schedule",
+      views:{
+        'menuContent':{
+          templateUrl:"templates/schedule.html",
+          control:'ScheduleCtrl'
+        }
+      }
+    })
 
-      .state('app.drupal-sponsors', {
-         url:"/sponsors",
-         views:{
-          'menuContent':{
-            templateUrl:"templates/sponsors.html",
-            control:'SponsorsCtrl'
-         }
-         }
-      })
-      .state('app.drupal-usefullinks', {
-         url:"/usefullinks",
-         views:{
-          'menuContent':{
-            templateUrl:"templates/usefullinks.html",
-            control:'UsefullinksCtrl'
-          }
-         }
-       })
+    .state('app.drupal-sponsors', {
+      url:"/sponsors",
+      views:{
+        'menuContent':{
+          templateUrl:"templates/sponsors.html",
+          control:'SponsorsCtrl'
+        }
+      }
+    })
 
-       .state('app.drupal-location', {
-         url:"/location",
-         views:{
-          'menuContent':{
-            templateUrl:"templates/location.html",
-            control:'LocationCtrl'
-          }
-         }
-       });
+    .state('app.drupal-usefullinks', {
+       url:"/usefullinks",
+       views:{
+        'menuContent':{
+          templateUrl:"templates/usefullinks.html",
+          control:'UsefullinksCtrl'
+        }
+      }
+    })
 
-   
+    .state('app.drupal-location', {
+      url:"/location",
+      views:{
+        'menuContent':{
+          templateUrl:"templates/location.html",
+          control:'LocationCtrl'
+       }
+      }
+    });
 
-    // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/sessions');
-  });
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/app/sessions');
+});
